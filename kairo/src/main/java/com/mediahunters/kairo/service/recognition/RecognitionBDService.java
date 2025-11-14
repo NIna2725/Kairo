@@ -34,14 +34,14 @@ public class RecognitionBDService {
 
         List<Serie> series = serieRepo.buscarPorTexto(texto);
         if(!series.isEmpty()){
-            Serie p = series.get(0);
-            return "Serie reconocida: " +  p.getTitulo() + " ( " + p.getTemparadas() + " )";
+            Serie s = series.get(0);
+            return "Serie reconocida: " +  s.getTitulo() + " ( " + s.getTemporadas() + " )";
         }
 
         List<Cancion> cancions = cancionRepo.buscarPorTexto(texto);
         if(!cancions.isEmpty()){
-            Cancion p = cancions.get(0);
-            return "Cancion reconocida: " +  p.getTitulo() + " ( " + p.getAnio() + " )";
+            Cancion c = cancions.get(0);
+            return "Cancion reconocida: " +  c.getTitulo() + " ( " + c.getAnio() + " )";
         }
 
         return "No se encontro ninguna coincidencia en la base de datos.";

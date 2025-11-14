@@ -22,4 +22,19 @@ public class SerieService {
     public Serie guardar(Serie s){
         return repo.save(s);
     }
+
+    public Serie actualizar(Long id, Serie datos){
+        Serie actual = repo.findById(id).orElseThrow();
+
+        actual.setTitulo(datos.getTitulo());
+        actual.setDescripcion(datos.getDescripcion());
+        actual.setTemporadas(datos.getTemporadas());
+        actual.setPlataforma(datos.getPlataforma());
+
+        return repo.save(actual);
+    }
+
+    public void eliminar(Long id){
+        repo.deleteById(id);
+    }
 }

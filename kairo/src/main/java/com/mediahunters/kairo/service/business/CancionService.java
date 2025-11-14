@@ -22,4 +22,19 @@ public class CancionService {
     public Cancion guardar(Cancion c){
         return repo.save(c);
     }
+
+    public Cancion actualizar(Long id, Cancion datos){
+        Cancion actual = repo.findById(id).orElseThrow();
+
+        actual.setTitulo(datos.getTitulo());
+        actual.setDescripcion(datos.getDescripcion());
+        actual.setAnio(datos.getAnio());
+        actual.setArtista(datos.getArtista());
+
+        return repo.save(actual);
+    }
+
+    public void eliminar(Long id){
+        repo.deleteById(id);
+    }
 }

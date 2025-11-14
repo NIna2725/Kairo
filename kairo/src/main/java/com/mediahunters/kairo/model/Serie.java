@@ -13,7 +13,7 @@ import lombok.NoArgsConstructor;
 @Entity
 public class Serie extends Contenido {
 
-    private int temparadas;
+    private Integer temporadas;
     private String plataforma;
     
 }
