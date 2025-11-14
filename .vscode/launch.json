@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-KairoApplication<kairo>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.mediahunters.kairo.KairoApplication",
+            "projectName": "kairo",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}
