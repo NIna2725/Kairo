@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.mediahunters.kairo.patterns.facade.GestorReconocimiento;
 import com.mediahunters.kairo.service.recognition.RecognitionBDService;
+import com.mediahunters.kairo.service.recognition.RecognitionResponse;
 
 @RestController
 @RequestMapping("/recognition")
@@ -21,17 +22,21 @@ public class RecognitionController {
     }
 
     @PostMapping("/audio")
-    public String reocnocerAudio(@RequestBody byte[] audio){
-        return gestor.reconocerAudio(audio);
+    public RecognitionResponse reconocerAudio(@RequestBody byte[] audio){
+        String resultado = gestor.reconocerAudio(audio);
+        return RecognitionResponse.soloResultado(resultado);
     }
 
     @PostMapping("/video")
-    public String reconocerVideo(@RequestBody byte[] video){
-        return gestor.reconoerVideo(video);
+    public RecognitionResponse reconocerVideo(@RequestBody byte[] video){
+        String resultado = gestor.reconocerVideo(video);
+        return RecognitionResponse.soloResultado(resultado);
     }
 
     @PostMapping("/texto")
-    public String reconocerTexto(@RequestBody String texto){
-        return recognitionBDService.reconocerTextoEnBD(texto);
+     public RecognitionResponse reconocerTexto(@RequestBody String texto){
+        String reconocimiento = gestor.reconocerTexto(texto);
+        String contexto = recognitionBDService.reconocerTextoEnBD(texto);
+        return new RecognitionResponse(reconocimiento, contexto);
     }
 }

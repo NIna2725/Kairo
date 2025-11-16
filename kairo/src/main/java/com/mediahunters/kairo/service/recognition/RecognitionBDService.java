@@ -11,6 +11,13 @@ import com.mediahunters.kairo.repository.CancionRepository;
 import com.mediahunters.kairo.repository.PeliculaRepository;
 import com.mediahunters.kairo.repository.SerieRepository;
 
+/**
+ * Complementa el reconocimiento textual devolviendo datos existentes en la base, de modo
+ * que el frontend pueda mostrar contexto (título, año, temporadas, etc.) junto al resultado
+ * del motor de reconocimiento.
+ */
+
+
 @Service
 public class RecognitionBDService {
     

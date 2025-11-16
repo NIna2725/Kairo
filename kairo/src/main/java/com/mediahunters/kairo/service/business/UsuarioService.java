@@ -16,7 +16,7 @@ public class UsuarioService {
         this.repo = repo;
     }
 
-    public Usuario registar(Usuario u){
+     public Usuario registrar(Usuario u){
         return repo.save(u);
     }
 

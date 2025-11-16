@@ -38,7 +38,7 @@ public class CancionController {
         return cancionService.actualizar(id, cancion);
     }
 
-    @DeleteMapping("/canciones/{id}")
+    @DeleteMapping("/{id}")
     public String eliminar(@PathVariable Long id) {
         cancionService.eliminar(id);
         return "Canción eliminada";

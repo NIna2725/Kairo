@@ -21,6 +21,6 @@ public class AuthController {
     @PostMapping("/register")
 
     public Usuario registrar(@RequestBody Usuario u){
-        return service.registar(u);
+        return service.registrar(u);
     }
 }

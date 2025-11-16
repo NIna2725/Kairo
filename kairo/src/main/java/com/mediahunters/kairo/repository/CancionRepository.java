@@ -12,7 +12,7 @@ public interface CancionRepository extends JpaRepository<Cancion, Long>{
 
     @Query("SELECT c FROM Cancion c WHERE " +
        "LOWER(c.titulo) LIKE LOWER(CONCAT('%', :texto, '%')) OR " +
-       "LoWER(c.descripcion) LIKE LOWER(CONCAT('%', :texto, '%')) OR " +
+       "LOWER(c.descripcion) LIKE LOWER(CONCAT('%', :texto, '%')) OR " +
        "LOWER(c.artista) LIKE LOWER(CONCAT('%', :texto, '%'))")
 List<Cancion> buscarPorTexto(@Param("texto") String texto);
 

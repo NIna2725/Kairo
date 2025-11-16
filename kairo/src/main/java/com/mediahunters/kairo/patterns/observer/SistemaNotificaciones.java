@@ -3,8 +3,8 @@ package com.mediahunters.kairo.patterns.observer;
 import java.util.ArrayList;
 import java.util.List;
 
-public class SsistemaNotificaciones {
-    
+public class SistemaNotificaciones {
+        
     private List<Observador> observadores = new ArrayList<>();
 
     public void suscribir(Observador o){

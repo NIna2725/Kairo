@@ -39,10 +39,9 @@ public class SerieController {
         return serieService.actualizar(id, serie);
     }
 
-    @DeleteMapping("/series/{id}")
+    @DeleteMapping("/{id}")
     public String eliminar(@PathVariable Long id){
         serieService.eliminar(id);
         return "Serie eliminada";
     }
-    
 }

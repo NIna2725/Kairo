@@ -14,19 +14,19 @@ private final MotorVideo motorVideo;
 private final MotorTexto motorTexto;
 
 public GestorReconocimiento(MotorAudio motorAudio, MotorVideo motorVideo, MotorTexto motorTexto){
-    this.motorAudio = motorAudio;
-    this.motorVideo = motorVideo;
-    this.motorTexto = motorTexto;
-}
+        this.motorAudio = motorAudio;
+        this.motorVideo = motorVideo;
+        this.motorTexto = motorTexto;
+    }
     public String reconocerAudio(byte[] audioData){
-        return motorAudio.ronocerCancion(audioData);
+    return motorAudio.reconocerCancion(audioData);
     }
 
-    public String reconoerVideo(byte[] videoData){
+    public String reconocerVideo(byte[] videoData){
         return motorVideo.reconocerEscena(videoData);
     }
 
-    public String reconocertexto(String frase){
-        return motorTexto.reonocerFrases(frase);
+     public String reconocerTexto(String frase){
+        return motorTexto.reconocerFrases(frase);
     }
 }
