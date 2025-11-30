@@ -2,6 +2,7 @@ package com.mediahunters.kairo.controller;
 
 import java.util.List;
 
+import org.springframework.lang.NonNull;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -17,7 +18,7 @@ import com.mediahunters.kairo.service.business.CancionService;
 @RestController
 @RequestMapping("/canciones")
 public class CancionController {
-     private final CancionService cancionService;
+    private final CancionService cancionService;
 
     public CancionController(CancionService cancionService) {
         this.cancionService = cancionService;
@@ -39,7 +40,7 @@ public class CancionController {
     }
 
     @DeleteMapping("/{id}")
-    public String eliminar(@PathVariable Long id) {
+    public String eliminar(@PathVariable @NonNull Long id) {
         cancionService.eliminar(id);
         return "Canción eliminada";
     }

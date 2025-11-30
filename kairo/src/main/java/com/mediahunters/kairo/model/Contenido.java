@@ -1,5 +1,6 @@
 package com.mediahunters.kairo.model;
 
+import org.springframework.lang.NonNull;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -22,10 +23,10 @@ public abstract class Contenido {
     @Id
     @SequenceGenerator(name = "contenido_seq", sequenceName = "contenido_seq", allocationSize = 1)
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "contenido_seq")
+    @NonNull
     private Long id;
-
 
     private String titulo;
     private String descripcion;
-    
+
 }
